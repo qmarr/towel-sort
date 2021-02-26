@@ -2,12 +2,12 @@
 // You should implement your task here.
 
 module.exports = function towelSort (matrix) {
-  let str = '';
-  if( matrix == undefined || matrix.length == 0)
-		return [];
+  let arr = [];
+	if( matrix == undefined || matrix.length == 0)
+		return arr;
 	for(let i = 0; i < matrix.length; i++) {
-		str += (i % 2 == 0)? matrix[i].join('') : matrix[i].reverse().join('');
+		arr.push((i % 2 == 0)? matrix[i] : matrix[i].reverse());
 	}
 
-  return str.split('').map(Number);
+  return String(arr).split(',');
 }
